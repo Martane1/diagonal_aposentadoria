@@ -9,12 +9,9 @@
 :root {
   --fab-azul: #003F87;
   --fab-azul-claro: #1565C0;
-  --fab-azul-celeste: #1976D2;
   --fab-verde: #1B5E20;
   --fab-amarelo: #F9A825;
-  --fab-cinza: #ECEFF1;
   --fab-cinza2: #CFD8DC;
-  --fab-branco: #FFFFFF;
   --fab-texto: #0D1B2A;
   --fab-texto2: #455A64;
   --card-bg: #FFFFFF;
@@ -23,60 +20,48 @@
   --shadow: 0 2px 12px rgba(0,63,135,0.08);
   --radius: 12px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--page-bg); color: var(--fab-texto); min-height: 100vh; }
 
-/* ── HEADER ── */
 .top-bar {
   background: linear-gradient(135deg, #002060 0%, #003F87 50%, #0056B3 100%);
-  padding: 0;
   position: sticky; top: 0; z-index: 100;
   box-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
 .top-bar-inner {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; gap: 18px;
-  padding: 14px 24px;
+  padding: 16px 24px;
 }
-.fab-logo { width: 56px; height: 56px; flex-shrink: 0; }
 .header-text { flex: 1; }
 .header-text h1 { font-size: 17px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.2; }
 .header-text p { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; letter-spacing: 0.05em; text-transform: uppercase; }
 .header-badge {
   background: var(--fab-amarelo); color: #002060;
   padding: 5px 14px; border-radius: 20px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
-  white-space: nowrap;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap;
 }
 .stripe { height: 4px; background: linear-gradient(90deg, #1B5E20 33%, #F9A825 33%, #F9A825 66%, #003F87 66%); }
 
-/* ── LAYOUT ── */
 .page { max-width: 1200px; margin: 0 auto; padding: 24px 20px 40px; }
 
-/* ── METRICS ── */
 .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
 .metric {
   background: var(--card-bg); border-radius: var(--radius);
   border: 1px solid var(--border); box-shadow: var(--shadow);
-  padding: 18px 20px; position: relative; overflow: hidden;
-  transition: transform 0.15s;
+  padding: 18px 20px; position: relative; overflow: hidden; transition: transform 0.15s;
 }
 .metric:hover { transform: translateY(-2px); }
-.metric::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-}
-.metric.blue::before { background: var(--fab-azul); }
-.metric.green::before { background: var(--fab-verde); }
+.metric::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.metric.blue::before   { background: var(--fab-azul); }
+.metric.green::before  { background: var(--fab-verde); }
 .metric.yellow::before { background: var(--fab-amarelo); }
-.metric.teal::before { background: #00838F; }
-.metric-icon { font-size: 22px; margin-bottom: 8px; }
+.metric.teal::before   { background: #00838F; }
 .metric-label { font-size: 10px; font-weight: 700; color: var(--fab-texto2); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
 .metric-value { font-size: 32px; font-weight: 700; color: var(--fab-azul); line-height: 1; }
-.metric-sub { font-size: 11px; color: var(--fab-texto2); margin-top: 4px; }
+.metric-sub   { font-size: 11px; color: var(--fab-texto2); margin-top: 4px; }
 
-/* ── CONTROLS ── */
 .controls-panel {
   background: var(--card-bg); border-radius: var(--radius);
   border: 1px solid var(--border); box-shadow: var(--shadow);
@@ -89,15 +74,13 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
 .seg button {
   padding: 6px 14px; font-size: 11px; font-weight: 600;
   cursor: pointer; background: transparent; border: none;
-  color: var(--fab-azul); transition: all 0.15s; font-family: inherit;
-  white-space: nowrap;
+  color: var(--fab-azul); transition: all 0.15s; font-family: inherit; white-space: nowrap;
 }
 .seg button:not(:last-child) { border-right: 1px solid var(--fab-azul); }
-.seg button:hover { background: rgba(0,63,135,0.06); }
+.seg button:hover  { background: rgba(0,63,135,0.06); }
 .seg button.active { background: var(--fab-azul); color: #fff; }
 .sep { width: 1px; background: var(--border); height: 28px; }
 
-/* ── ORG PILLS ── */
 .org-pills { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .org-pill {
   padding: 4px 12px; border-radius: 20px; cursor: pointer;
@@ -106,50 +89,40 @@ body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; b
 }
 .all-btn {
   font-size: 11px; color: var(--fab-azul-claro); background: none; border: none;
-  cursor: pointer; font-family: inherit; font-weight: 700; text-decoration: underline;
-  padding: 0;
+  cursor: pointer; font-family: inherit; font-weight: 700; text-decoration: underline; padding: 0;
 }
 
-/* ── CARDS ── */
 .chart-card {
   background: var(--card-bg); border-radius: var(--radius);
   border: 1px solid var(--border); box-shadow: var(--shadow);
   padding: 18px 20px; margin-bottom: 18px;
 }
 .card-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-.card-title { font-size: 13px; font-weight: 700; color: var(--fab-azul); text-transform: uppercase; letter-spacing: 0.05em; }
-.card-sub { font-size: 11px; color: var(--fab-texto2); font-weight: 400; }
-.card-line { flex: 1; height: 1px; background: var(--border); }
+.card-title  { font-size: 13px; font-weight: 700; color: var(--fab-azul); text-transform: uppercase; letter-spacing: 0.05em; }
+.card-sub    { font-size: 11px; color: var(--fab-texto2); font-weight: 400; }
+.card-line   { flex: 1; height: 1px; background: var(--border); }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
 
-/* ── LEGEND ── */
 .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--fab-texto2); font-weight: 600; }
-.legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.legend-dot  { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
 
-/* ── HEATMAP ── */
 .heatmap-wrap { overflow-x: auto; }
 table.hm { border-collapse: separate; border-spacing: 3px; font-size: 11px; width: 100%; }
 table.hm th { padding: 4px 5px; text-align: center; color: var(--fab-texto2); font-weight: 700; font-size: 10px; letter-spacing: 0.04em; }
 table.hm th.yr-future { color: var(--fab-azul-claro); }
 table.hm td { padding: 5px 4px; text-align: center; border-radius: 5px; font-weight: 700; min-width: 30px; transition: transform 0.1s; cursor: default; }
 table.hm td:hover { transform: scale(1.15); z-index: 1; position: relative; }
-table.hm td.org { text-align: left; font-size: 11px; font-weight: 700; color: var(--fab-azul); min-width: 62px; background: transparent; letter-spacing: 0.02em; }
-table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 400; }
-.hm-future-col { background: rgba(25,118,210,0.04); }
+table.hm td.org { text-align: left; font-size: 11px; font-weight: 700; color: var(--fab-azul); min-width: 62px; background: transparent !important; }
+table.hm td.zero        { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 400; }
+table.hm td.future-zero { color: #93C5FD; background: rgba(25,118,210,0.08); font-weight: 400; }
 
 .heat-legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
 .heat-legend-label { font-size: 10px; font-weight: 700; color: var(--fab-texto2); text-transform: uppercase; letter-spacing: 0.05em; }
 .heat-item { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--fab-texto2); font-weight: 600; }
-.heat-sw { width: 20px; height: 14px; border-radius: 3px; }
+.heat-sw   { width: 20px; height: 14px; border-radius: 3px; }
 
-/* ── DIVIDER ── */
-.section-divider { display: flex; align-items: center; gap: 12px; margin: 6px 0 18px; }
-.section-divider span { font-size: 11px; font-weight: 700; color: var(--fab-azul); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
-.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-/* ── FOOTER ── */
 .footer {
   text-align: center; padding: 20px; margin-top: 10px;
   font-size: 11px; color: var(--fab-texto2);
@@ -157,45 +130,18 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
 }
 .footer strong { color: var(--fab-azul); }
 
-/* ── TOOLTIP CUSTOM ── */
-.anno-badge {
-  display: inline-block; background: var(--fab-amarelo); color: #002060;
-  border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700;
-  margin-left: 6px; vertical-align: middle;
-}
-
 @media (max-width: 768px) {
   .metrics { grid-template-columns: repeat(2, 1fr); }
-  .grid-2 { grid-template-columns: 1fr; }
-  .top-bar-inner { gap: 12px; }
+  .grid-2  { grid-template-columns: 1fr; }
   .header-text h1 { font-size: 14px; }
-  .header-badge { display: none; }
+  .header-badge   { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="top-bar">
   <div class="top-bar-inner">
-    <!-- Logo FAB em SVG -->
-    <svg class="fab-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Estrela gironada estilizada da FAB -->
-      <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-      <!-- Estrela de 5 pontas -->
-      <polygon points="50,6 61,35 92,35 68,54 78,83 50,65 22,83 32,54 8,35 39,35"
-        fill="none" stroke="#F9A825" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- Gládio alado simplificado -->
-      <line x1="50" y1="22" x2="50" y2="78" stroke="white" stroke-width="3" stroke-linecap="round"/>
-      <!-- Asas -->
-      <path d="M50 42 Q30 38 16 46 Q30 44 50 50" fill="rgba(255,255,255,0.85)"/>
-      <path d="M50 42 Q70 38 84 46 Q70 44 50 50" fill="rgba(255,255,255,0.85)"/>
-      <!-- Cruz do sul (4 estrelas) -->
-      <circle cx="50" cy="30" r="2" fill="#F9A825"/>
-      <circle cx="50" cy="70" r="2.5" fill="#F9A825"/>
-      <circle cx="30" cy="52" r="1.5" fill="#F9A825"/>
-      <circle cx="68" cy="48" r="1.8" fill="#F9A825"/>
-    </svg>
     <div class="header-text">
       <h1>Painel de Aposentadorias de Servidores Docentes no Âmbito da DIRENS</h1>
       <p>Diretoria de Ensino da Aeronáutica · Organizações de Ensino · 2016–2036</p>
@@ -207,26 +153,24 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
 
 <div class="page">
 
-  <!-- METRICS -->
   <div class="metrics" id="metrics"></div>
 
-  <!-- CONTROLS -->
   <div class="controls-panel">
     <div class="ctrl-group">
       <span class="ctrl-label">Gráfico</span>
       <div class="seg">
         <button class="active" onclick="setView('stacked')" id="tab-stacked">Barras</button>
-        <button onclick="setView('line')" id="tab-line">Tendência</button>
+        <button onclick="setView('line')"    id="tab-line">Tendência</button>
         <button onclick="setView('heatmap')" id="tab-heatmap">Calor</button>
-        <button onclick="setView('bar')" id="tab-bar">Ranking</button>
+        <button onclick="setView('bar')"     id="tab-bar">Ranking</button>
       </div>
     </div>
     <div class="sep"></div>
     <div class="ctrl-group">
       <span class="ctrl-label">Período</span>
       <div class="seg">
-        <button class="active" onclick="setPeriod('all')" id="period-all">2016–2036</button>
-        <button onclick="setPeriod('past')" id="period-past">Histórico</button>
+        <button class="active" onclick="setPeriod('all')"    id="period-all">2016–2036</button>
+        <button onclick="setPeriod('past')"   id="period-past">Histórico</button>
         <button onclick="setPeriod('future')" id="period-future">Projeção</button>
       </div>
     </div>
@@ -238,12 +182,12 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
     </div>
   </div>
 
-  <!-- MAIN CHART -->
-  <div class="chart-card">
+  <!-- card principal (oculto no modo calor) -->
+  <div class="chart-card" id="main-card">
     <div class="card-header">
-      <span class="card-title" id="main-title">Aposentadorias por organização e ano</span>
+      <span class="card-title" id="main-title">Aposentadorias empilhadas por organização</span>
       <div class="card-line"></div>
-      <span class="card-sub" id="main-sub"></span>
+      <span class="card-sub"  id="main-sub">2016–2036</span>
     </div>
     <div style="position:relative;width:100%;height:320px;">
       <canvas id="mainChart" role="img" aria-label="Gráfico principal de aposentadorias FAB"></canvas>
@@ -251,7 +195,7 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
     <div class="legend" id="main-legend"></div>
   </div>
 
-  <!-- HEATMAP (condicional) -->
+  <!-- heatmap (visível só no modo calor) -->
   <div class="chart-card" id="heatmap-card" style="display:none;">
     <div class="card-header">
       <span class="card-title">Mapa de calor</span>
@@ -268,19 +212,18 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
       <div class="heat-item"><div class="heat-sw" style="background:#1E3A8A"></div>18+</div>
       <div class="heat-item"><div class="heat-sw" style="background:#F5F7FA;border:1px solid #e2e8f0"></div>0</div>
       <div class="heat-item" style="margin-left:8px;">
-        <div class="heat-sw" style="background:rgba(25,118,210,0.07);border:1px dashed #93C5FD"></div>
+        <div class="heat-sw" style="background:rgba(25,118,210,0.1);border:1px dashed #93C5FD"></div>
         <span style="color:var(--fab-azul-claro)">Projeção (2026+)</span>
       </div>
     </div>
   </div>
 
-  <!-- GRID 2 -->
   <div class="grid-2">
     <div class="chart-card">
       <div class="card-header">
         <span class="card-title">Distribuição total</span>
         <div class="card-line"></div>
-        <span class="card-sub">por organização</span>
+        <span class="card-sub" id="pie-sub">por organização</span>
       </div>
       <div style="position:relative;width:100%;height:230px;">
         <canvas id="pieChart" role="img" aria-label="Distribuição por organização"></canvas>
@@ -291,7 +234,7 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
       <div class="card-header">
         <span class="card-title">Ano do pico</span>
         <div class="card-line"></div>
-        <span class="card-sub">maior volume histórico</span>
+        <span class="card-sub">maior volume no período selecionado</span>
       </div>
       <div style="position:relative;width:100%;height:230px;">
         <canvas id="peakChart" role="img" aria-label="Ano de pico por organização"></canvas>
@@ -299,7 +242,6 @@ table.hm td.zero { color: var(--fab-cinza2); background: #F5F7FA; font-weight: 4
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <strong>Força Aérea Brasileira · DIRENS</strong> &nbsp;·&nbsp;
     Painel de Aposentadorias de Servidores Docentes &nbsp;·&nbsp; 2016–2036
@@ -317,243 +259,268 @@ const RAW = {
   EPCAR: {2016:2,2017:1,2018:1,2019:2,2020:1,2021:4,2022:2,2023:0,2024:1,2025:2,2026:5,2027:1,2028:2,2029:2,2030:2,2031:2,2032:2,2033:2,2034:3,2035:3,2036:1},
   UNIFA: {2016:0,2017:0,2018:0,2019:0,2020:1,2021:0,2022:1,2023:1,2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:1,2031:0,2032:1,2033:0,2034:0,2035:4,2036:3}
 };
-const ORGS = Object.keys(RAW);
-const YEARS = Array.from({length:21},(_,i)=>2016+i);
+const ORGS  = Object.keys(RAW);
+const YEARS = Array.from({length:21}, (_, i) => 2016 + i);
 const COLORS = {
   AFA:'#1565C0', CBNB:'#0D47A1', CIAAR:'#B45309',
   CTRB:'#9C2753', ECE:'#5B21B6', EEAR:'#B91C1C',
   EPCAR:'#065F46', UNIFA:'#1B5E20'
 };
 
-
-let activeOrgs = new Set(ORGS);
-let currentView = 'stacked', currentPeriod = 'all';
+let activeOrgs    = new Set(ORGS);
+let currentView   = 'stacked';
+let currentPeriod = 'all';
 let mainChart, pieChart, peakChart;
 
-const getYears = () => currentPeriod==='past'?YEARS.filter(y=>y<=2025):currentPeriod==='future'?YEARS.filter(y=>y>=2026):YEARS;
-const getTotal = org => YEARS.reduce((s,y)=>s+(RAW[org][y]||0),0);
-const getPeak  = org => { let mx=0,yr=2016; YEARS.forEach(y=>{ if((RAW[org][y]||0)>mx){mx=RAW[org][y];yr=y;} }); return {yr,mx}; };
-const getYearTotal = y => [...activeOrgs].reduce((s,o)=>s+(RAW[o][y]||0),0);
+/* ── helpers ── */
+const getYears = () =>
+  currentPeriod === 'past'   ? YEARS.filter(y => y <= 2025) :
+  currentPeriod === 'future' ? YEARS.filter(y => y >= 2026) : YEARS;
 
-function selectAll() { ORGS.forEach(o=>activeOrgs.add(o)); renderPills(); renderAll(); }
+/* BUG 2 corrigido: respeitam período selecionado */
+const getTotal = org => getYears().reduce((s, y) => s + (RAW[org][y] || 0), 0);
+const getPeak  = org => {
+  const yrs = getYears();
+  let mx = 0, yr = yrs[0];
+  yrs.forEach(y => { if ((RAW[org][y] || 0) > mx) { mx = RAW[org][y]; yr = y; } });
+  return { yr, mx };
+};
 
-function renderMetrics() {
-  const peakYr = YEARS.map(y=>({y,v:getYearTotal(y)})).reduce((a,b)=>b.v>a.v?b:a);
-  const fut = YEARS.filter(y=>y>=2026).reduce((s,y)=>s+getYearTotal(y),0);
-  const grand = ORGS.reduce((s,o)=>s+getTotal(o),0);
-  const avgFut = Math.round(fut / YEARS.filter(y=>y>=2026).length);
-  document.getElementById('metrics').innerHTML = `
-    <div class="metric blue">
-      <div class="metric-label">Total Geral</div>
-      <div class="metric-value">${grand}</div>
-      <div class="metric-sub">aposentadorias · 2016–2036</div>
-    </div>
-    <div class="metric green">
-      <div class="metric-label">Organizações</div>
-      <div class="metric-value">${ORGS.length}</div>
-      <div class="metric-sub">unidades do COMAER</div>
-    </div>
-    <div class="metric yellow">
-      <div class="metric-label">Pico Geral</div>
-      <div class="metric-value">${peakYr.y}</div>
-      <div class="metric-sub">${peakYr.v} aposentadorias previstas</div>
-    </div>
-    <div class="metric teal">
-      <div class="metric-label">Média Futura</div>
-      <div class="metric-value">${avgFut}</div>
-      <div class="metric-sub">aposen./ano a partir de 2026</div>
-    </div>`;
-}
-
-function renderPills() {
-  document.getElementById('org-pills').innerHTML = ORGS.map(org=>{
-    const on = activeOrgs.has(org);
-    const c = COLORS[org];
-    return `<button class="org-pill" onclick="toggleOrg('${org}')"
-      style="background:${on?c+'18':'transparent'};border-color:${c};color:${on?c:'#78909C'};opacity:${on?1:0.55}"
-      >${org}</button>`;
-  }).join('');
-}
+/* ── controles ── */
+function selectAll() { ORGS.forEach(o => activeOrgs.add(o)); renderPills(); renderAll(); }
 
 function toggleOrg(org) {
-  if (activeOrgs.has(org) && activeOrgs.size===1) return;
+  if (activeOrgs.has(org) && activeOrgs.size === 1) return;
   activeOrgs.has(org) ? activeOrgs.delete(org) : activeOrgs.add(org);
   renderPills(); renderAll();
 }
 
 function setView(v) {
   currentView = v;
-  ['stacked','line','heatmap','bar'].forEach(t=>document.getElementById('tab-'+t).className=t===v?'active':'');
-  document.getElementById('heatmap-card').style.display = v==='heatmap'?'block':'none';
+  ['stacked','line','heatmap','bar'].forEach(t =>
+    document.getElementById('tab-' + t).className = t === v ? 'active' : '');
+  /* BUG 4 corrigido: esconde o card errado, nunca deixa canvas vazio visível */
+  document.getElementById('main-card').style.display    = v === 'heatmap' ? 'none'  : 'block';
+  document.getElementById('heatmap-card').style.display = v === 'heatmap' ? 'block' : 'none';
   renderAll();
 }
 
 function setPeriod(p) {
   currentPeriod = p;
-  ['all','past','future'].forEach(t=>document.getElementById('period-'+t).className=t===p?'active':'');
+  ['all','past','future'].forEach(t =>
+    document.getElementById('period-' + t).className = t === p ? 'active' : '');
   renderAll();
 }
 
-function makeLegend(id) {
-  document.getElementById(id).innerHTML = [...activeOrgs].map(org=>`
-    <div class="legend-item"><div class="legend-dot" style="background:${COLORS[org]}"></div>${org}</div>`).join('');
+function renderPills() {
+  document.getElementById('org-pills').innerHTML = ORGS.map(org => {
+    const on = activeOrgs.has(org), c = COLORS[org];
+    return `<button class="org-pill" onclick="toggleOrg('${org}')"
+      style="background:${on ? c+'18' : 'transparent'};border-color:${c};color:${on ? c : '#78909C'};opacity:${on ? 1 : 0.55}"
+      >${org}</button>`;
+  }).join('');
 }
 
-function renderMain() {
-  const yrs = getYears();
-  const titles = {stacked:'Aposentadorias empilhadas por organização',line:'Tendência de aposentadorias',heatmap:'',bar:'Ranking por total de aposentadorias'};
-  const subs = {stacked:`${yrs[0]}–${yrs[yrs.length-1]}`,line:'Evolução anual por unidade',heatmap:'',bar:'Volume acumulado no período'};
-  document.getElementById('main-title').textContent = titles[currentView];
-  document.getElementById('main-sub').textContent = subs[currentView];
-  if (mainChart) mainChart.destroy();
-  if (currentView==='heatmap') { renderHeatmap(); document.getElementById('main-legend').innerHTML=''; return; }
+function makeLegend(id) {
+  document.getElementById(id).innerHTML = [...activeOrgs].map(org =>
+    `<div class="legend-item"><div class="legend-dot" style="background:${COLORS[org]}"></div>${org}</div>`
+  ).join('');
+}
 
-  if (currentView==='bar') {
-    const tots = [...activeOrgs].map(o=>({o,v:yrs.reduce((s,y)=>s+(RAW[o][y]||0),0)})).sort((a,b)=>b.v-a.v);
-    mainChart = new Chart(document.getElementById('mainChart'),{
-      type:'bar',
-      data:{labels:tots.map(t=>t.o),datasets:[{
-        data:tots.map(t=>t.v),
-        backgroundColor:tots.map(t=>COLORS[t.o]+'CC'),
-        borderColor:tots.map(t=>COLORS[t.o]),
-        borderWidth:2, borderRadius:6
-      }]},
-      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} aposentadorias`}}},
-        scales:{x:{grid:{color:'rgba(0,63,135,0.06)'},ticks:{color:'#78909C'}},
-                y:{grid:{display:false},ticks:{color:'#455A64',font:{weight:'600'}}}}}
+/* ── métricas ── */
+function renderMetrics() {
+  const yrs = getYears();
+  /* BUG 5 corrigido: usa getYears() */
+  const peakYr = yrs.map(y => ({ y, v: [...activeOrgs].reduce((s, o) => s + (RAW[o][y] || 0), 0) }))
+                     .reduce((a, b) => b.v > a.v ? b : a, { y: yrs[0], v: 0 });
+  /* BUG 6 corrigido: usa activeOrgs */
+  const grand = [...activeOrgs].reduce((s, o) => s + getTotal(o), 0);
+  const avgPerYear = yrs.length ? Math.round(grand / yrs.length) : 0;
+
+  document.getElementById('metrics').innerHTML = `
+    <div class="metric blue">
+      <div class="metric-label">Total no Período</div>
+      <div class="metric-value">${grand}</div>
+      <div class="metric-sub">aposentadorias · ${yrs[0]}–${yrs[yrs.length-1]}</div>
+    </div>
+    <div class="metric green">
+      <div class="metric-label">Organizações</div>
+      <div class="metric-value">${activeOrgs.size}</div>
+      <div class="metric-sub">unidades do COMAER ativas</div>
+    </div>
+    <div class="metric yellow">
+      <div class="metric-label">Pico no Período</div>
+      <div class="metric-value">${peakYr.y}</div>
+      <div class="metric-sub">${peakYr.v} aposentadorias no ano</div>
+    </div>
+    <div class="metric teal">
+      <div class="metric-label">Média Anual</div>
+      <div class="metric-value">${avgPerYear}</div>
+      <div class="metric-sub">aposen./ano no período selecionado</div>
+    </div>`;
+}
+
+/* ── gráfico principal ── */
+function renderMain() {
+  if (mainChart) { mainChart.destroy(); mainChart = null; }
+  if (currentView === 'heatmap') return;
+
+  const yrs = getYears();
+  const titles = { stacked:'Aposentadorias empilhadas por organização', line:'Tendência de aposentadorias', bar:'Ranking por total de aposentadorias' };
+  const subs   = { stacked:`${yrs[0]}–${yrs[yrs.length-1]}`, line:'Evolução anual por unidade', bar:'Volume acumulado no período' };
+  document.getElementById('main-title').textContent = titles[currentView] || '';
+  document.getElementById('main-sub').textContent   = subs[currentView]   || '';
+
+  if (currentView === 'bar') {
+    const tots = [...activeOrgs].map(o => ({ o, v: getTotal(o) })).sort((a, b) => b.v - a.v);
+    mainChart = new Chart(document.getElementById('mainChart'), {
+      type: 'bar',
+      data: { labels: tots.map(t => t.o), datasets: [{ data: tots.map(t => t.v),
+        backgroundColor: tots.map(t => COLORS[t.o]+'CC'),
+        borderColor: tots.map(t => COLORS[t.o]), borderWidth: 2, borderRadius: 6 }] },
+      options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        plugins: { legend:{display:false}, tooltip:{callbacks:{label: c => ` ${c.raw} aposentadorias`}} },
+        scales: { x:{grid:{color:'rgba(0,63,135,0.06)'},ticks:{color:'#78909C'}},
+                  y:{grid:{display:false},ticks:{color:'#455A64',font:{weight:'600'}}} } }
     });
-    document.getElementById('main-legend').innerHTML=''; return;
+    document.getElementById('main-legend').innerHTML = '';
+    return;
   }
 
-  const type = currentView==='stacked'?'bar':'line';
-  const datasets = [...activeOrgs].map(org=>({
-    label:org,
-    data:yrs.map(y=>RAW[org][y]||0),
-    backgroundColor:COLORS[org]+(type==='bar'?'CC':'22'),
-    borderColor:COLORS[org], borderWidth:type==='line'?2.5:0,
-    fill:type==='line', tension:0.4,
-    pointRadius:type==='line'?3:0, pointHoverRadius:6,
-    stack:type==='bar'?'s':undefined,
-    borderRadius:type==='bar'?4:0
+  const type = currentView === 'stacked' ? 'bar' : 'line';
+  const datasets = [...activeOrgs].map(org => ({
+    label: org,
+    data: yrs.map(y => RAW[org][y] || 0),
+    backgroundColor: COLORS[org] + (type === 'bar' ? 'CC' : '22'),
+    borderColor: COLORS[org], borderWidth: type === 'line' ? 2.5 : 0,
+    fill: type === 'line', tension: 0.4,
+    pointRadius: type === 'line' ? 3 : 0, pointHoverRadius: 6,
+    stack: type === 'bar' ? 's' : undefined,
+    borderRadius: type === 'bar' ? 4 : 0
   }));
 
-  // Linha de divisão histórico/projeção
   const plugins = [];
-  if (currentPeriod==='all') {
+  if (currentPeriod === 'all') {
     plugins.push({
-      id:'divLine',
+      id: 'divLine',
       afterDraw(chart) {
-        const {ctx, scales:{x}} = chart;
+        const { ctx, scales: { x } } = chart;
         const idx = yrs.indexOf(2026);
-        if (idx<0) return;
-        const xPos = x.getPixelForValue(idx-0.5);
+        if (idx < 0) return;
+        const xPos = x.getPixelForValue(idx - 0.5);
         ctx.save();
-        ctx.strokeStyle='rgba(0,63,135,0.3)';
-        ctx.lineWidth=1.5;
-        ctx.setLineDash([5,4]);
-        ctx.beginPath();
-        ctx.moveTo(xPos, chart.chartArea.top);
-        ctx.lineTo(xPos, chart.chartArea.bottom);
-        ctx.stroke();
-        ctx.fillStyle='rgba(0,63,135,0.6)';
-        ctx.font='bold 9px Segoe UI, sans-serif';
-        ctx.fillText('◄ Histórico', xPos-55, chart.chartArea.top+14);
-        ctx.fillText('Projeção ►', xPos+5, chart.chartArea.top+14);
+        ctx.strokeStyle = 'rgba(0,63,135,0.3)'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
+        ctx.beginPath(); ctx.moveTo(xPos, chart.chartArea.top); ctx.lineTo(xPos, chart.chartArea.bottom); ctx.stroke();
+        ctx.fillStyle = 'rgba(0,63,135,0.6)'; ctx.font = 'bold 9px Segoe UI, sans-serif';
+        ctx.fillText('◄ Histórico', xPos - 55, chart.chartArea.top + 14);
+        ctx.fillText('Projeção ►',  xPos + 5,  chart.chartArea.top + 14);
         ctx.restore();
       }
     });
   }
 
-  mainChart = new Chart(document.getElementById('mainChart'),{
-    type, data:{labels:yrs.map(String),datasets},
-    plugins,
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,
-        callbacks:{afterTitle:items=>`Total: ${items.reduce((s,i)=>s+i.raw,0)}`}}},
-      scales:{
-        x:{grid:{color:'rgba(0,63,135,0.05)'},ticks:{color:'#78909C',maxRotation:45},stacked:type==='bar'},
-        y:{grid:{color:'rgba(0,63,135,0.05)'},ticks:{color:'#78909C'},stacked:type==='bar'}
+  mainChart = new Chart(document.getElementById('mainChart'), {
+    type, data: { labels: yrs.map(String), datasets }, plugins,
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins: { legend:{display:false}, tooltip:{mode:'index', intersect:false,
+        callbacks:{ afterTitle: items => `Total: ${items.reduce((s, i) => s + i.raw, 0)}` }} },
+      scales: {
+        x: { grid:{color:'rgba(0,63,135,0.05)'}, ticks:{color:'#78909C', maxRotation:45}, stacked: type==='bar' },
+        y: { grid:{color:'rgba(0,63,135,0.05)'}, ticks:{color:'#78909C'}, stacked: type==='bar' }
       },
-      interaction:{mode:'index',intersect:false}
+      interaction: { mode:'index', intersect:false }
     }
   });
   makeLegend('main-legend');
 }
 
+/* ── heatmap ── */
 function renderHeatmap() {
   const yrs = getYears();
   const heatColor = v => {
     if (!v) return null;
-    if (v<=3)  return ['#DBEAFE','#1E3A8A'];
-    if (v<=7)  return ['#93C5FD','#1E3A8A'];
-    if (v<=12) return ['#3B82F6','#fff'];
-    if (v<=17) return ['#1D4ED8','#fff'];
+    if (v <= 3)  return ['#DBEAFE','#1E3A8A'];
+    if (v <= 7)  return ['#93C5FD','#1E3A8A'];
+    if (v <= 12) return ['#3B82F6','#fff'];
+    if (v <= 17) return ['#1D4ED8','#fff'];
     return ['#1E3A8A','#fff'];
   };
-  const rows = [...activeOrgs].map(org=>{
-    const cells = yrs.map(y=>{
-      const v = RAW[org][y]||0;
+  /* BUG 3 corrigido: células futuras com background próprio via classe */
+  const rows = [...activeOrgs].map(org => {
+    const cells = yrs.map(y => {
+      const v = RAW[org][y] || 0;
       const c = heatColor(v);
-      const fut = y>=2026 ? ' class="hm-future-col"' : '';
-      return c
-        ? `<td${fut} style="background:${c[0]};color:${c[1]}" title="${org} · ${y}: ${v}">${v}</td>`
-        : `<td${fut} class="zero" title="${org} · ${y}: 0">·</td>`;
+      const isFuture = y >= 2026;
+      if (c) {
+        const outline = isFuture ? 'outline:1.5px solid rgba(25,118,210,0.3);' : '';
+        return `<td style="background:${c[0]};color:${c[1]};${outline}" title="${org} · ${y}: ${v}">${v}</td>`;
+      }
+      return `<td class="${isFuture ? 'future-zero' : 'zero'}" title="${org} · ${y}: 0">·</td>`;
     }).join('');
     return `<tr><td class="org">${org}</td>${cells}</tr>`;
   }).join('');
-  const heads = yrs.map(y=>`<th class="${y>=2026?'yr-future':''}">${String(y).slice(2)}</th>`).join('');
-  document.getElementById('heatmap-body').innerHTML=`<table class="hm"><thead><tr><th></th>${heads}</tr></thead><tbody>${rows}</tbody></table>`;
+  const heads = yrs.map(y =>
+    `<th class="${y >= 2026 ? 'yr-future' : ''}">${String(y).slice(2)}</th>`).join('');
+  document.getElementById('heatmap-body').innerHTML =
+    `<table class="hm"><thead><tr><th></th>${heads}</tr></thead><tbody>${rows}</tbody></table>`;
 }
 
+/* ── pizza ── */
 function renderPie() {
-  if (pieChart) pieChart.destroy();
-  const tots = [...activeOrgs].map(o=>({o,v:getTotal(o)}));
-  pieChart = new Chart(document.getElementById('pieChart'),{
-    type:'doughnut',
-    data:{labels:tots.map(t=>t.o),datasets:[{
-      data:tots.map(t=>t.v),
-      backgroundColor:tots.map(t=>COLORS[t.o]+'CC'),
-      borderColor:tots.map(t=>COLORS[t.o]),
-      borderWidth:2, hoverOffset:8
-    }]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
-      plugins:{legend:{display:false},tooltip:{callbacks:{
-        label:c=>` ${c.label}: ${c.raw} (${Math.round(c.raw/ORGS.reduce((s,o)=>s+getTotal(o),0)*100)}%)`
+  if (pieChart) { pieChart.destroy(); pieChart = null; }
+  const tots = [...activeOrgs].map(o => ({ o, v: getTotal(o) }));
+  /* BUG 1 corrigido: denominador é a soma das activeOrgs no período atual */
+  const totalAtivo = tots.reduce((s, t) => s + t.v, 0);
+  const periodLabel = currentPeriod === 'past' ? 'histórico' : currentPeriod === 'future' ? 'projeção' : 'período completo';
+  document.getElementById('pie-sub').textContent = `por organização · ${periodLabel}`;
+  pieChart = new Chart(document.getElementById('pieChart'), {
+    type: 'doughnut',
+    data: { labels: tots.map(t => t.o), datasets: [{ data: tots.map(t => t.v),
+      backgroundColor: tots.map(t => COLORS[t.o]+'CC'),
+      borderColor: tots.map(t => COLORS[t.o]), borderWidth:2, hoverOffset:8 }] },
+    options: { responsive:true, maintainAspectRatio:false, cutout:'62%',
+      plugins: { legend:{display:false}, tooltip:{ callbacks:{
+        label: c => ` ${c.label}: ${c.raw} (${totalAtivo ? Math.round(c.raw / totalAtivo * 100) : 0}%)`
       }}}
     }
   });
   makeLegend('pie-legend');
 }
 
+/* ── pico ── */
 function renderPeak() {
-  if (peakChart) peakChart.destroy();
-  const peaks = [...activeOrgs].map(o=>{const p=getPeak(o);return{o,...p};}).sort((a,b)=>a.yr-b.yr);
-  peakChart = new Chart(document.getElementById('peakChart'),{
-    type:'bar',
-    data:{
-      labels:peaks.map(p=>p.o),
-      datasets:[{
-        data:peaks.map(p=>p.yr),
-        backgroundColor:peaks.map(p=>p.yr>=2026?COLORS[p.o]+'99':COLORS[p.o]+'CC'),
-        borderColor:peaks.map(p=>COLORS[p.o]),
-        borderWidth:2, borderRadius:5
-      }]
+  if (peakChart) { peakChart.destroy(); peakChart = null; }
+  /* BUG 2 corrigido: getPeak já usa getYears() internamente */
+  const peaks = [...activeOrgs].map(o => { const p = getPeak(o); return { o, ...p }; })
+                               .sort((a, b) => a.yr - b.yr);
+  peakChart = new Chart(document.getElementById('peakChart'), {
+    type: 'bar',
+    data: {
+      labels: peaks.map(p => p.o),
+      datasets: [{ data: peaks.map(p => p.yr),
+        backgroundColor: peaks.map(p => p.yr >= 2026 ? COLORS[p.o]+'99' : COLORS[p.o]+'CC'),
+        borderColor: peaks.map(p => COLORS[p.o]), borderWidth:2, borderRadius:5 }]
     },
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{
-        label:(c)=>{const p=peaks[c.dataIndex];return ` Pico: ${p.yr} · ${p.mx} aposentadorias`;}
+    options: { responsive:true, maintainAspectRatio:false,
+      plugins: { legend:{display:false}, tooltip:{ callbacks:{
+        label: (c) => { const p = peaks[c.dataIndex]; return ` Pico: ${p.yr} · ${p.mx} aposentadorias`; }
       }}},
-      scales:{
-        x:{grid:{display:false},ticks:{color:'#455A64',font:{size:10,weight:'600'}}},
-        y:{min:2014,max:2038,grid:{color:'rgba(0,63,135,0.05)'},ticks:{color:'#78909C',callback:v=>v,stepSize:4}}
+      scales: {
+        x: { grid:{display:false}, ticks:{color:'#455A64', font:{size:10, weight:'600'}} },
+        y: { min:2014, max:2038, grid:{color:'rgba(0,63,135,0.05)'}, ticks:{color:'#78909C', callback:v=>v, stepSize:4} }
       }
     }
   });
 }
 
-function renderAll() { renderMetrics(); renderMain(); renderPie(); renderPeak(); }
+function renderAll() {
+  renderMetrics();
+  if (currentView === 'heatmap') renderHeatmap();
+  else renderMain();
+  renderPie();
+  renderPeak();
+}
 
 renderPills();
 renderAll();
